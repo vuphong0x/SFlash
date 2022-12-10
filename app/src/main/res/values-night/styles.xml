@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">?attr/colorPrimary</item>
+        <item name="bottomSheetDialogTheme">@style/RoundedCornersBottomSheetTheme</item>
+    </style>
+
+    <style name="AppTheme.Material3" parent="Theme.Material3.DynamicColors.DayNight">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="alertDialogTheme">@style/AlertDialogTheme.Material3</item>
+        <item name="switchPreferenceCompatStyle">@style/Preference.MaterialSwitchPreference</item>
+    </style>
+
+</resources>

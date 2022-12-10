@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="@string/app_name" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <me.tankery.lib.circularseekbar.CircularSeekBar
+        android:id="@+id/progressCircular"
+        android:layout_width="@dimen/circular_seekbar_width"
+        android:layout_height="@dimen/circular_seekbar_height"
+        android:layout_centerInParent="true"
+        app:cs_circle_color="@color/gray_100"
+        app:cs_circle_progress_color="@color/orange_300"
+        app:cs_circle_stroke_width="@dimen/dp_3"
+        app:cs_end_angle="40"
+        app:cs_maintain_equal_circle="true"
+        app:cs_pointer_color="@color/orange_300"
+        app:cs_pointer_halo_border_width="@dimen/dp_4"
+        app:cs_pointer_halo_color="@android:color/white"
+        app:cs_pointer_halo_color_ontouch="@android:color/white"
+        app:cs_pointer_halo_width="@dimen/dp_4"
+        app:cs_pointer_stroke_width="@dimen/dp_8"
+        app:cs_start_angle="140" />
+
+    <ImageView
+        android:id="@+id/buttonPower"
+        android:layout_width="@dimen/default_button_size"
+        android:layout_height="@dimen/default_button_size"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ripple_effect"
+        android:src="@drawable/ic_power_center"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/imagePowerIcon"
+        android:layout_width="@dimen/default_icon_size"
+        android:layout_height="@dimen/default_icon_size"
+        android:layout_centerInParent="true"
+        android:src="@drawable/power" />
+
+    <RelativeLayout
+        android:id="@+id/bgOptions"
+        android:layout_width="@dimen/bg_options_width"
+        android:layout_height="@dimen/bg_options_height"
+        android:layout_alignBottom="@id/progressCircular"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ic_rectangle_bg_options">
+
+        <RelativeLayout
+            android:id="@+id/bgOptionsCircle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:background="@drawable/bg_option_circle" />
+
+        <ImageView
+            android:id="@+id/imageFlash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/default_margin"
+            android:src="@drawable/flash_icon" />
+
+        <ImageView
+            android:id="@+id/imageScreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:src="@drawable/screen_icon" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/buttonSOS"
+        android:layout_width="@dimen/default_button_size"
+        android:layout_height="@dimen/default_button_size"
+        android:layout_below="@id/bgOptions"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_toStartOf="@id/bgOptions"
+        android:background="@drawable/ripple_effect"
+        android:src="@drawable/ic_power_center" />
+
+    <ImageView
+        android:id="@+id/imageSOS"
+        android:layout_width="@dimen/default_icon_size"
+        android:layout_height="@dimen/default_icon_size"
+        android:layout_below="@id/bgOptions"
+        android:layout_marginTop="@dimen/dp_42"
+        android:layout_marginEnd="@dimen/dp_11"
+        android:layout_toStartOf="@id/bgOptions"
+        android:background="@drawable/ripple_effect"
+        android:src="@drawable/sos" />
+
+    <ImageView
+        android:id="@+id/buttonStroboscope"
+        android:layout_width="@dimen/default_button_size"
+        android:layout_height="@dimen/default_button_size"
+        android:layout_below="@id/bgOptions"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_toEndOf="@id/bgOptions"
+        android:background="@drawable/ripple_effect"
+        android:src="@drawable/ic_power_center" />
+
+    <ImageView
+        android:id="@+id/imageStroboscope"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/bgOptions"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="@dimen/dp_42"
+        android:layout_toEndOf="@id/bgOptions"
+        android:background="@drawable/ripple_effect"
+        android:src="@drawable/loader" />
+
+    <TextView
+        android:id="@+id/textStroboscopeInterval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonStroboscope"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="@string/stroboscope_interval" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderStroboscopeInterval"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textStroboscopeInterval"
+        android:layout_marginHorizontal="6dp"
+        android:importantForAccessibility="no"
+        android:stepSize="0.1"
+        android:valueFrom="0.1"
+        android:valueTo="1" />
+
+</RelativeLayout>
